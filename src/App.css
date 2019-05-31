@@ -51,6 +51,10 @@ nav h2 {
   cursor: pointer;
 }
 
+.open-menu {
+  display: none;
+}
+
 .content {
   margin-left: 185px;
   width: 75%;
@@ -75,12 +79,12 @@ nav h2 {
 .content img {
   width: 99%;
   margin: 17px;
-  grid-row-start: auto;
+  /* grid-row-start: auto; */
 }
 
 #illustrations img {
   /* display: inline-block; */
-  column-break-inside: avoid;
+  /* column-break-inside: avoid; */
   /* width: 100%;
   margin: 17px; */
 }
@@ -113,7 +117,45 @@ nav h2 {
 
 }
 
+@keyframes menu-opening {
+  0% {
+    top: -50vh;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
 @media only screen and (max-width: 800px) {
+
+  .open-menu {
+    position: absolute;
+    top: 0;
+    /* display: contents; */
+    /* flex-direction: column; */
+    height: 50vh;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    z-index: 15;
+  }
+
+  #active-menu {
+    display: contents;
+    animation: menu-opening ease-out 500ms;
+  }
+
+  .open-menu a {
+    background: black;
+    color: #ccc;
+    text-decoration: none;
+    padding: 18px;
+  }
+
+  .open-menu a:hover {
+    color: white;
+  }
 
   .App {
     display: flex;
@@ -122,25 +164,27 @@ nav h2 {
   }
 
   nav {
-    position: fixed;
+    position: relative;
     top: 0;
     flex-direction: row;
-    width: 100vw;
-    /* height: 150px; */
+    width: 100%;
     align-items: center;
     padding-right: 0;
-    background-color: rgba(255, 255, 255, 1);
     justify-content: space-around;
     z-index: 5;
-    height: 75px;
+    height: auto;
+    margin: 0 0 0 50px 0;
+    padding: 0;
+    /* min-width: 325px; */
   }
 
   .logo-container {
-    position: fixed;
-    left: 5%;
-    height: 50px;
+    position: relative;
+    left: -4%;
+    height: auto;
     top: 5px;
     z-index: 6;
+    width: 60%;
   }
 
   .logo-container h2 {
@@ -148,8 +192,8 @@ nav h2 {
   }
 
   .menu-button {
-    position: fixed;
-    right: 5%;
+    position: relative;
+    right: -2%;
     height: 50px;
     top: 5px;
     z-index: 6;
@@ -159,7 +203,7 @@ nav h2 {
     margin-left: 0px;
     /* margin-top: 175px; */
     width: 100%;
-    padding-top: 95px;
+    /* padding-top: 95px; */
   }
 
   .content img {
@@ -182,19 +226,39 @@ nav h2 {
     grid-template-columns: 1fr;
     justify-items: center;
     width: 100%;
-    grid-column-gap: 0;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  #illustrations img {
+    grid-column-start: 1;
   }
 
   #illustration a {
     justify-self: center;
+    grid-column-start: 1;
+    height: 100%;
   }
 
   #full-img {
-    grid-column-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: center;
   }
 
   .tri-grid {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .logo-container {
+    width: 90%;
+    left: 5%;
+  }
+
+  .menu-button {
+    right: 5%;
   }
 }

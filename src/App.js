@@ -9,6 +9,7 @@ import Signs from './components/Signs';
 import Design from './components/Design';
 import About from './components/About';
 import Contact from './components/Contact';
+import OpenMenu from './components/OpenMenu';
 
 
 class App extends Component {
@@ -16,14 +17,27 @@ class App extends Component {
     super();
 
     this.state = {
-
+      showClass: false
     }
 
+    this.changeClass = this.changeClass.bind(this);
+
+  }
+
+  changeClass() {
+    const { showClass } = this.state;
+    this.setState({
+      showClass: showClass === true? false: true
+    })
   }
   render() {
     return (
       <div className="App">
-        <Nav />
+        <OpenMenu
+          showClass={this.state.showClass}
+          changeClass={this.changeClass}/>
+        <Nav
+          changeClass={this.changeClass}/>
         <Route exact path="/" render={props => (
           <Welcome />
         )} />

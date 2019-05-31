@@ -16,7 +16,7 @@ const Nav = (props) => {
         <Link to="/about">ABOUT</Link>
         <Link to="contact">CONTACT</Link>
       </div>
-      <div className="menu-button">
+      <div onClick={props.changeClass} className="menu-button">
         Menu
       </div>
     </nav>
