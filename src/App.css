@@ -69,6 +69,7 @@ nav h2 {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   grid-column-gap: 35px;
+  column-count: 2;
 
   /* column-count: 2;
   column-gap: 10px;
@@ -83,7 +84,7 @@ nav h2 {
 }
 
 #illustrations img {
-  /* display: inline-block; */
+  display: inline-block;
   /* column-break-inside: avoid; */
   /* width: 100%;
   margin: 17px; */
@@ -91,6 +92,7 @@ nav h2 {
 
 #single-page {
   height: 100vh;
+  text-align: left;
 }
 
 #olga {
@@ -130,6 +132,53 @@ nav h2 {
   justify-self: start;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+input {
+  /* width: 300px; */
+  width: 90%;
+  max-width: 600px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  /* box-shadow: 0px 3px 15px rgba(0,0,0,0.2); */
+  padding-left: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  /* width: 300px; */
+  width: 90%;
+  max-width: 600px;
+  height: 200px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  /* box-shadow: 0px 3px 15px rgba(0,0,0,0.2); */
+  padding: 10px 0 0 10px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.submit-button {
+  background: black;
+  color: white;
+  width: 96px;
+  height: 24px;
+}
+
 @keyframes menu-opening {
   0% {
     top: -50vh;
@@ -141,6 +190,10 @@ nav h2 {
 }
 
 @media only screen and (max-width: 800px) {
+
+  input, textarea {
+    max-width: none;
+  }
 
   .open-menu {
     position: absolute;
@@ -253,6 +306,11 @@ nav h2 {
     width: 100%;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+  }
+
+  .about-content {
+    width: 95%;
+    justify-self: center;
   }
 
   #illustrations a {
