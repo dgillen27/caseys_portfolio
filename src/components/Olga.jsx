@@ -2,8 +2,10 @@ import React from 'react';
 
 const Olga = () => {
   return (
-    <div className="olga">
-      <h1>OLGA</h1>
+    <div className="content" id="olga">
+      <img src="https://i.imgur.com/h95wBPS.jpg" alt="" />
+      <img src="https://i.imgur.com/TQxHdru.jpg" alt="" />
+      <img src="https://i.imgur.com/EW40R0F.jpg" alt="" />
     </div>
   )
 }

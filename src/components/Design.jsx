@@ -2,7 +2,7 @@ import React from 'react';
 
 const Design = () => {
   return (
-    <div className="design">
+    <div className="content" id="single-page">
       <h1>DESIGN</h1>
     </div>
   )
