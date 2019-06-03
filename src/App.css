@@ -30,6 +30,10 @@ nav a {
   font-size: 21px;
 }
 
+nav a:hover {
+  color: #555;
+}
+
 nav h2 {
   font-family: 'Dawning of a New Day', cursive;
 }
@@ -62,6 +66,7 @@ nav h2 {
   padding-top: 10px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 #illustrations {
@@ -189,10 +194,46 @@ textarea:focus {
   }
 }
 
+.mobile-images {
+  display: none;
+}
+
+#expanded-sign {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  width: 80vw;
+}
+
+#expanded-sign img {
+  margin: 5px;
+}
+
+#sign-description {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: start;
+  padding-left: 1.5%;
+}
+
+@media only screen and (max-width: 1200px) {
+  #expanded-sign {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 800px) {
 
   input, textarea {
     max-width: none;
+  }
+
+  .mobile-images {
+    display: contents;
+  }
+
+  .single {
+    display: none;
   }
 
   .open-menu {
@@ -331,6 +372,12 @@ textarea:focus {
   }
 
   .tri-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  #expanded-sign {
+    width: 100%;
     grid-template-columns: 1fr;
     justify-items: center;
   }

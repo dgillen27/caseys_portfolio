@@ -10,6 +10,7 @@ import Design from './components/Design';
 import About from './components/About';
 import Contact from './components/Contact';
 import OpenMenu from './components/OpenMenu';
+import ExpandedSign from './components/ExpandedSign'
 
 
 class App extends Component {
@@ -58,6 +59,17 @@ class App extends Component {
         )} />
         <Route exact path="/contact" render={props => (
           <Contact />
+        )} />
+        <Route exact path="/animal-crackers" render={props => (
+          <ExpandedSign
+            images={["https://i.imgur.com/OpJJwSk.jpg",
+              "https://i.imgur.com/99YjkQO.jpg",
+              "https://i.imgur.com/A2PYQVJ.jpg",
+              "https://i.imgur.com/gCTLU8J.jpg",
+              "https://i.imgur.com/2fW1Xd5.jpg",
+              "https://i.imgur.com/W10CqEE.jpg",
+              "https://i.imgur.com/Q1M8G7z.jpg"
+            ]}/>
         )} />
       </div>
     );

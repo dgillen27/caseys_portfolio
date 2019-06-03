@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const Signs = () => {
   return (
     <div className="content" id="illustrations">
+      <p id="sign-description">Signs are all handpainted with love, click on picture for details!</p>
       <Link to="/animal-crackers"><img src="https://i.imgur.com/Dnt2cdP.jpg" alt="ac" /></Link>
       <Link to="/gift"><img src="https://i.imgur.com/qJRRZgH.jpg" alt="gift" /></Link>
       <Link id="full-img" to="/ode"><img src="https://i.imgur.com/qCiQdkA.jpg" alt="ode" /></Link>
