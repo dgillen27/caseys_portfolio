@@ -71,6 +71,16 @@ class App extends Component {
               "https://i.imgur.com/Q1M8G7z.jpg"
             ]}/>
         )} />
+        <Route exact path="/gift" render={props => (
+          <ExpandedSign
+            images={["https://i.imgur.com/LjaRZDS.jpg",
+            "https://i.imgur.com/JNDxoCD.jpg",
+            "https://i.imgur.com/Ntxaryn.jpg",
+            "https://i.imgur.com/xknPBzA.jpg",
+            "https://i.imgur.com/9egSLg6.jpg",
+            
+          ]}/>
+        )} />
       </div>
     );
   }
